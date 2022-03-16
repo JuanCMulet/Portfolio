@@ -1,0 +1,17 @@
+.navbar {
+    box-shadow: 0px 2px 2px #777;
+    margin-bottom: 1em;
+    background-color: rgb(29, 28, 28);
+  }
+#logo {
+    border: 1px solid rgb(204, 164, 61);
+  }
+  
+#soc-media {
+    margin-right: 10px;
+  }
+  
+.btn-log-in {
+    color: rgb(204, 164, 61);
+    border: 1px solid rgb(204, 164, 61);
+  }
