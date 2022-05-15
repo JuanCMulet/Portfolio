@@ -1,0 +1,21 @@
+<div *ngFor="let proj of projects">
+    <div class="d-flex flex-row justify-content-between">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                <a [href]="proj.url">
+                    <img [src]="proj.image" class="img-fluid" alt="">
+                </a>
+            </div>
+            <div class="col">
+                <div class="card-block px-2">
+                    <h4 class="card-title">{{proj.name}}</h4>
+                    <p class="card-text">{{proj.desc}}</p>
+                </div>
+            </div>
+        </div>
+        <div>
+        <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-pencil-fill"></i></button>
+        <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-trash-fill"></i></button>
+        </div>
+    </div>
+</div>

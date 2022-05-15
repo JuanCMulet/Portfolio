@@ -4,16 +4,22 @@
     "profileImage": "assets/profile-img.jpg",
     "position": "Full Stack Developer Junior",
     "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
-    "school": {
-        "name": "Superior de Comercio General San Martín",
-        "image": "assets/logo.png",
-        "url": "https://esupcom.unr.edu.ar/"
-    },
+    "education": [
+        {
+        "name": "Superior de Comercio Libertador General San Martín",
+        "image": "assets/SCJSM.ico",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
+        "url": "https://esupcom.unr.edu.ar/",
+        "start": "2010",
+        "end": "2015"
+        }
+    ],
     "experience": [
         {
             "name": "Trabajo",
             "image": "assets/logo.png",
             "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
+            "url": "#",
             "start": "2019",
             "end": "2021"
         }
@@ -21,8 +27,15 @@
     "projects": [
         {
             "name": "Proyecto",
-            "url": "#",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e"
+            "image": "assets/github.ico",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
+            "url": "#"
+        },
+        {
+            "name": "Proyecto",
+            "image": "assets/github.ico",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
+            "url": "#"
         }
     ]
 }

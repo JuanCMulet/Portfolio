@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { LogService } from 'src/app/service/log.service';
-import { DataService } from'src/app/service/data.service';
+import { DataService } from 'src/app/service/data.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-education-items',
-  templateUrl: './education-items.component.html',
-  styleUrls: ['./education-items.component.css']
+  selector: 'app-projects-items',
+  templateUrl: './projects-items.component.html',
+  styleUrls: ['./projects-items.component.css']
 })
-export class EducationItemsComponent implements OnInit {
-  education:any
+export class ProjectsItemsComponent implements OnInit {
+  projects:any
   loggedIn:boolean = false;
   subscription?: Subscription;
 
   constructor(
     private logService: LogService,
-    private db: DataService
+    private db:DataService
   ) {
     this.subscription = this.logService.onToggle().subscribe(
       value => {
@@ -26,7 +26,7 @@ export class EducationItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.db.getData().subscribe(data => {
-      this.education = data.education
+      this.projects = data.projects
     })
   }
 

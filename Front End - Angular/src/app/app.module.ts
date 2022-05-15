@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -10,6 +11,9 @@ import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { EducationItemsComponent } from './components/education-items/education-items.component';
+import { ProjectsItemsComponent } from './components/projects-items/projects-items.component';
+import { ExperienceItemsComponent } from './components/experience-items/experience-items.component';
+import { SkillsItemsComponent } from './components/skills-items/skills-items.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +25,14 @@ import { EducationItemsComponent } from './components/education-items/education-
     EducationComponent,
     SkillsComponent,
     ProjectsComponent,
-    EducationItemsComponent
+    EducationItemsComponent,
+    ProjectsItemsComponent,
+    ExperienceItemsComponent,
+    SkillsItemsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

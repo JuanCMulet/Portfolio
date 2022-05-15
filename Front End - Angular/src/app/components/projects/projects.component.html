@@ -6,23 +6,7 @@
           <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-plus-circle" style="font-size: 1.5rem; color:rgb(61, 204, 92)"></i></button>
         </div>
         <br>
-        <div class="d-flex flex-row justify-content-between">
-          <div class="row no-gutters">
-              <div class="col-auto">
-                  <img src="logo.png" class="img-fluid" alt="">
-              </div>
-              <div class="col">
-                  <div class="card-block px-2">
-                      <h4 class="card-title">Proyecto</h4>
-                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e</p>
-                  </div>
-              </div>
-          </div>
-          <div>
-            <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-pencil-fill"></i></button>
-            <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-trash-fill"></i></button>
-          </div>
-        </div>
+        <app-projects-items></app-projects-items>
       </div>
     </div>
   </div>

@@ -1,16 +1,16 @@
-<div *ngFor="let educ of education">
+<div *ngFor="let exp of experiences">
     <div class="d-flex flex-row justify-content-between">
         <div class="row no-gutters">
             <div class="col-auto">
-                <a [href]="educ.url">
-                    <img [src]="educ.image" class="img-fluid" alt="">
+                <a [href]="exp.url">
+                    <img [src]="exp.image" class="img-fluid" alt="">
                 </a>
             </div>
             <div class="col">
                 <div class="card-block px-2">
-                    <h4 class="card-title">{{educ.name}}</h4>
-                    <p class="card-text">{{educ.desc}}</p>
-                    <footer class="blockquote-footer">{{educ.start}} - {{educ.end}}</footer>
+                    <h4 class="card-title">{{exp.name}}</h4>
+                    <p class="card-text">{{exp.desc}}</p>
+                    <footer class="blockquote-footer">{{exp.start}} - {{exp.end}}</footer>
                 </div>
             </div>
         </div>

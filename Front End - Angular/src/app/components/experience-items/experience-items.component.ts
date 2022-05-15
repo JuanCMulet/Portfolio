@@ -4,12 +4,12 @@ import { DataService } from'src/app/service/data.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-education-items',
-  templateUrl: './education-items.component.html',
-  styleUrls: ['./education-items.component.css']
+  selector: 'app-experience-items',
+  templateUrl: './experience-items.component.html',
+  styleUrls: ['./experience-items.component.css']
 })
-export class EducationItemsComponent implements OnInit {
-  education:any
+export class ExperienceItemsComponent implements OnInit {
+  experiences:any
   loggedIn:boolean = false;
   subscription?: Subscription;
 
@@ -26,7 +26,7 @@ export class EducationItemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.db.getData().subscribe(data => {
-      this.education = data.education
+      this.experiences = data.experience
     })
   }
 
