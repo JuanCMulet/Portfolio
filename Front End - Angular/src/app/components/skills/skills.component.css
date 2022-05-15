@@ -1,3 +1,8 @@
+.text {
+  max-width: 120px;
+}
+
+
 .mat-card {
     border-radius: 32px;
     margin: 10px 10px;

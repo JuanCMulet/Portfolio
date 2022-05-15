@@ -1,0 +1,28 @@
+{
+    "name": "Juan Ignacio Coronel Mulet",
+    "backImage": "https://media.istockphoto.com/photos/tabletop-role-playing-flat-lay-background-with-colorful-rpg-dices-and-picture-id1178549496?k=20&m=1178549496&s=170667a&w=0&h=a3AnnLdKam0fqEa8MgRO868qaj-TL4MMoKe0tWwLDd4=",
+    "profileImage": "assets/profile-img.jpg",
+    "position": "Full Stack Developer Junior",
+    "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
+    "school": {
+        "name": "Superior de Comercio General San Martín",
+        "image": "assets/logo.png",
+        "url": "https://esupcom.unr.edu.ar/"
+    },
+    "experience": [
+        {
+            "name": "Trabajo",
+            "image": "assets/logo.png",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
+            "start": "2019",
+            "end": "2021"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Proyecto",
+            "url": "#",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e"
+        }
+    ]
+}

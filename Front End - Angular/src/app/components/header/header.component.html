@@ -1,13 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="assets/logo.png" id="logo" alt="logo">  Argentina Programa</a>    
+      <a class="navbar-brand" href="#"><img src="assets\logo.png" id="logo" alt="logo">  Argentina Programa</a>    
       <form class="d-flex">
           <div class="row" id="soc-media">
             <a class="nav-link col-4" href="#"><i class="bi bi-linkedin" style="font-size: 1.5rem; color: rgb(204, 164, 61)"></i></a>
             <a class="nav-link col-4" href="#"><i class="bi bi-twitter" style="font-size: 1.5rem; color: rgb(204, 164, 61)"></i></a>
             <a class="nav-link col-4" href="#"><i class="bi bi-instagram" style="font-size: 1.5rem; color: rgb(204, 164, 61)"></i></a>
           </div>
-          <button class="btn btn-log-in">Log In</button>
+          
         </form>
+        <button (click)="toggleLogIn()" class="btn btn-log-in">Log In</button>
     </div>
   </nav>

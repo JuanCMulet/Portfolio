@@ -1,6 +1,8 @@
 <div class="card mat-card" id="first-card">
     <div id="profile-background">
-      <img src="https://media.istockphoto.com/photos/tabletop-role-playing-flat-lay-background-with-colorful-rpg-dices-and-picture-id1178549496?k=20&m=1178549496&s=170667a&w=0&h=a3AnnLdKam0fqEa8MgRO868qaj-TL4MMoKe0tWwLDd4=" id="banner" alt="banner image">
+      <img src="https://media.istockphoto.com/photos/tabletop-role-playing-flat-lay-background-with-colorful-rpg-dices-and-picture-id1178549496?k=20&m=1178549496&s=170667a&w=0&h=a3AnnLdKam0fqEa8MgRO868qaj-TL4MMoKe0tWwLDd4=" 
+           id="banner" 
+           alt="banner image">
     </div>
     <div class="card-body">
       <div class="row">
@@ -13,7 +15,7 @@
         <div class="col-9 d-flex flex-column">
           <div class="d-flex flex-row justify-content-between">
             <h5 class="card-title">Acerca de</h5>
-            <button class="btn btn-default"><i class="bi bi-pencil-fill"></i></button>
+            <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-pencil-fill"></i></button>
           </div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e</p>
         </div>

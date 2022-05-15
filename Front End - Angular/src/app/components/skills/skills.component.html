@@ -3,44 +3,39 @@
       <div class="d-flex flex-column">
         <div class="d-flex flex-row justify-content-between">
           <h5 class="card-title">Hard & Soft Skills</h5>
-          <button class="btn btn-default"><i class="bi bi-plus-circle" style="font-size: 1.5rem; color:rgb(61, 204, 92)"></i></button>
+          <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-plus-circle" style="font-size: 1.5rem; color:rgb(61, 204, 92)"></i></button>
         </div>
         <br>
-        <div>
-          <div class="c100 p70">
-            <span>70%</span>
-            <div class="slice">
-                <div class="bar"></div>
-                <div class="fill"></div>
+        <div class="d-flex flex-row justify-content-around">
+          <div class="d-flex flex-column align-content-center">
+            <div class="c100 p70">
+              <span>70%</span>
+              <div class="slice">
+                  <div class="bar"></div>
+                  <div class="fill"></div>
+              </div>
             </div>
+            <div class="text-center text">CSS</div>
           </div>
-          <div class="c100 p70">
-            <span>70%</span>
-            <div class="slice">
-                <div class="bar"></div>
-                <div class="fill"></div>
+          <div class="d-flex flex-column align-content-center">
+            <div class="c100 p70">
+              <span>70%</span>
+              <div class="slice">
+                  <div class="bar"></div>
+                  <div class="fill"></div>
+              </div>
             </div>
+            <div class="text-center text">HTML</div>
           </div>
-          <div class="c100 p70">
-            <span>70%</span>
-            <div class="slice">
-                <div class="bar"></div>
-                <div class="fill"></div>
+          <div class="d-flex flex-column align-content-center">
+            <div class="c100 p70">
+              <span>70%</span>
+              <div class="slice">
+                  <div class="bar"></div>
+                  <div class="fill"></div>
+              </div>
             </div>
-          </div>
-          <div class="c100 p70">
-            <span>70%</span>
-            <div class="slice">
-                <div class="bar"></div>
-                <div class="fill"></div>
-            </div>
-          </div>
-          <div class="c100 p70">
-            <span>70%</span>
-            <div class="slice">
-                <div class="bar"></div>
-                <div class="fill"></div>
-            </div>
+            <div class="text-center text">Javascript</div>
           </div>
         </div>
       </div>

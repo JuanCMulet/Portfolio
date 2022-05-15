@@ -3,7 +3,7 @@
       <div class="d-flex flex-column">
         <div class="d-flex flex-row justify-content-between">
           <h5 class="card-title">Educación</h5>
-          <button (click)="toggleAddEduc()" class="btn btn-default"><i class="bi bi-plus-circle" style="font-size: 1.5rem; color:rgb(61, 204, 92)"></i></button>
+          <button *ngIf="loggedIn" (click)="toggleForm()" class="btn btn-default"><i class="bi bi-plus-circle" style="font-size: 1.5rem; color:rgb(61, 204, 92)"></i></button>
         </div>
         <br>
         <div class="d-flex flex-row justify-content-between">
@@ -19,7 +19,7 @@
                   </div>
               </div>
           </div>
-          <div>
+          <div *ngIf="loggedIn">
             <button class="btn btn-default"><i class="bi bi-pencil-fill"></i></button>
             <button class="btn btn-default"><i class="bi bi-trash-fill"></i></button>
           </div>

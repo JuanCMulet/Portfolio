@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UiService } from 'src/app/service/ui.service';
+import { LogService } from 'src/app/service/log.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -9,26 +9,28 @@ import { Subscription } from 'rxjs';
 })
 export class ExperienceComponent implements OnInit {
   showAddExp:boolean = false;
-  subscription?:Subscription;
+  loggedIn:boolean = false;
+  subscription?: Subscription;
 
   constructor(
-    private uiService: UiService
+    private logService: LogService
   ) {
-    this.subscription = this.uiService.onToggle().subscribe(
+    this.subscription = this.logService.onToggle().subscribe(
       value => {
-        this.showAddExp = value
+        this.loggedIn = value;
       }
     )
-  }
+   }
 
   ngOnInit(): void {
   }
 
-  toggleAddExp() {
-    this.uiService.toggleAddExp();
-    console.log("Exp: ", this.showAddExp)
+  toggleLogIn() {
+    this.logService.toggleLogIn();
   }
 
-
+  toggleForm() {
+    this.showAddExp = !this.showAddExp;
+  }
 
 }

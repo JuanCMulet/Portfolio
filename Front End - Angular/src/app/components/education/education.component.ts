@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UiService } from 'src/app/service/ui.service';
+import { LogService } from 'src/app/service/log.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -9,24 +9,24 @@ import { Subscription } from 'rxjs';
 })
 export class EducationComponent implements OnInit {
   showAddEduc:boolean = false;
-  subscription?:Subscription;
+  loggedIn:boolean = false;
+  subscription?: Subscription;
 
   constructor(
-    private uiService: UiService
+    private logService: LogService
   ) {
-    this.subscription = this.uiService.onToggle().subscribe(
+    this.subscription = this.logService.onToggle().subscribe(
       value => {
-        this.showAddEduc = value
+        this.loggedIn = value;
       }
     )
-  }
+   }
 
   ngOnInit(): void {
   }
 
-  toggleAddEduc() {
-    this.uiService.toggleAddEduc();
-    console.log("Educ: ", this.showAddEduc)
+  toggleForm() {
+    this.showAddEduc = !this.showAddEduc;
   }
 
 }
