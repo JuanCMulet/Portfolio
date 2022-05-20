@@ -25,8 +25,8 @@ export class EducationItemsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.db.getData().subscribe(data => {
-      this.education = data.education
+    this.db.getData("education").subscribe(data => {
+      this.education = data
     })
   }
 

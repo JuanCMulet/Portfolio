@@ -25,8 +25,8 @@ export class ExperienceItemsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.db.getData().subscribe(data => {
-      this.experiences = data.experience
+    this.db.getData("experience").subscribe(data => {
+      this.experiences = data
     })
   }
 

@@ -6,7 +6,12 @@
           <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-plus-circle" style="font-size: 1.5rem; color:rgb(61, 204, 92)"></i></button>
         </div>
         <br>
-        <app-projects-items></app-projects-items>
+        <app-projects-items
+        *ngFor="let project of projects"
+        [project]="project"
+        (onDeleteProject)="deleteProject(project)"
+        >
+        </app-projects-items>
       </div>
     </div>
   </div>

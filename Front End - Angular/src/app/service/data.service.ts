@@ -6,12 +6,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
+  private apiUrl = "http://localhost:5001"
 
   constructor(
     private http:HttpClient
   ) { }
 
-  getData():Observable<any> {
-    return this.http.get("./assets/database/db.json")
+  getData(data: string):Observable<any> {
+    console.log(this.apiUrl)
+    return this.http.get(this.apiUrl+"/"+data)
+  }
+
+  deleteItem(data: string, item: any): Observable<any> {
+    const url = `${this.apiUrl}/${data}/${item.id}`;
+    return this.http.delete<any>(url);
   }
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LogService } from 'src/app/service/log.service';
-import { DataService } from 'src/app/service/data.service';
 import { Subscription } from 'rxjs';
+import { Project } from '../../Projects'
 
 @Component({
   selector: 'app-projects-items',
@@ -9,13 +9,13 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./projects-items.component.css']
 })
 export class ProjectsItemsComponent implements OnInit {
-  projects:any
+  @Input() project:any;
+  @Output() onDeleteProject: EventEmitter<Project> = new EventEmitter();
   loggedIn:boolean = false;
   subscription?: Subscription;
 
   constructor(
     private logService: LogService,
-    private db:DataService
   ) {
     this.subscription = this.logService.onToggle().subscribe(
       value => {
@@ -25,9 +25,9 @@ export class ProjectsItemsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.db.getData().subscribe(data => {
-      this.projects = data.projects
-    })
   }
 
+  onDelete(project:Project) {
+    this.onDeleteProject.emit(project);
+  }
 }

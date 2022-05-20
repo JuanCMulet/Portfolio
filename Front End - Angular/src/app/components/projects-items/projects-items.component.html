@@ -1,21 +1,27 @@
-<div *ngFor="let proj of projects">
+<div >
     <div class="d-flex flex-row justify-content-between">
         <div class="row no-gutters">
             <div class="col-auto">
-                <a [href]="proj.url">
-                    <img [src]="proj.image" class="img-fluid" alt="">
+                <a [href]="project.url">
+                    <img [src]="project.image" 
+                    class="img-fluid" 
+                    alt="">
                 </a>
             </div>
             <div class="col">
                 <div class="card-block px-2">
-                    <h4 class="card-title">{{proj.name}}</h4>
-                    <p class="card-text">{{proj.desc}}</p>
+                    <h4 class="card-title">{{project.name}}</h4>
+                    <p class="card-text">{{project.desc}}</p>
                 </div>
             </div>
         </div>
         <div>
-        <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-pencil-fill"></i></button>
-        <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-trash-fill"></i></button>
+        <button *ngIf="loggedIn" class="btn btn-default">
+            <i class="bi bi-pencil-fill"></i>
+        </button>
+        <button *ngIf="loggedIn" class="btn btn-default">
+            <i (click)="onDelete(project)" class="bi bi-trash-fill"></i>
+        </button>
         </div>
     </div>
 </div>
