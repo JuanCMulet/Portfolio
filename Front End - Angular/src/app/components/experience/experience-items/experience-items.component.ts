@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LogService } from 'src/app/service/log.service';
-import { DataService } from'src/app/service/data.service';
 import { Subscription } from 'rxjs';
+import { Experience } from '../Experience'
 
 @Component({
   selector: 'app-experience-items',
@@ -9,25 +9,26 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./experience-items.component.css']
 })
 export class ExperienceItemsComponent implements OnInit {
-  experiences:any
-  loggedIn:boolean = false;
+  @Input() experience:any;
+  @Input() loggedIn:boolean = false;
+  @Output() onDeleteExperience: EventEmitter<Experience> = new EventEmitter();
   subscription?: Subscription;
 
   constructor(
     private logService: LogService,
-    private db: DataService
   ) {
-    this.subscription = this.logService.onToggle().subscribe(
+    /*this.subscription = this.logService.onToggle().subscribe(
       value => {
         this.loggedIn = value;
       }
-    )
+    )*/
    }
 
   ngOnInit(): void {
-    this.db.getData("experience").subscribe(data => {
-      this.experiences = data
-    })
+  }
+
+  onDelete(experience:Experience) {
+    this.onDeleteExperience.emit(experience);
   }
 
 }

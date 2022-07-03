@@ -10,25 +10,12 @@
     {
       "id": 1,
       "name": "Superior de Comercio Libertador General San Martín",
-      "image": "assets/SCJSM.ico",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
-      "url": "https://esupcom.unr.edu.ar/",
       "start": "2010",
       "end": "2015"
     }
   ],
-  "experience": [
-    {
-      "id": 1,
-      "name": "Trabajo",
-      "image": "assets/logo.png",
-      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
-      "url": "#",
-      "start": "2019",
-      "end": "2021"
-    }
-  ],
-  "projects": [
-    
-  ]
+  "experience": [],
+  "skills": [],
+  "projects": []
 }

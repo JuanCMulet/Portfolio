@@ -14,7 +14,6 @@ export class LogService {
     console.log("logged in")
     this.loggedIn = !this.loggedIn;
     this.subject.next(this.loggedIn);
-    
   }
 
   onToggle(): Observable<any> {

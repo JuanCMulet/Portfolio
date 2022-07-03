@@ -1,0 +1,41 @@
+<form
+  #it="ngForm"
+  class="d-flex flex-column align-items-center"
+  (ngSubmit)="onSubmit(it)"
+>
+
+  <fieldset>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Habilidad</label>
+      <input
+        required
+        class="form-control"
+        name="name"
+        type="text"
+        id="name"
+        ngModel
+        #name="ngModel"
+        placeholder="CSS"
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="level" class="form-label">Nivel</label>
+      <input
+        class="form-control"
+        name="level"
+        type="number"
+        min="0"
+        max="100"
+        id="level"
+        ngModel
+        #level="ngModel"
+        placeholder="50%"
+      >
+    </div>
+
+  </fieldset>
+    <button type="submit" class="btn btn-success">Guardar</button> 
+
+</form>

@@ -1,0 +1,14 @@
+
+<div>
+  <circle-progress
+    [percent]="skill.level"
+    [title]="skill.name"
+    [radius]="100"
+    [outerStrokeWidth]="16"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#78C000'"
+    [innerStrokeColor]="'#C7E596'"
+  >
+  </circle-progress>
+  <i (click)="onDelete(skill)" class="bi bi-trash-fill button"></i>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LogService } from 'src/app/service/log.service';
 import { Subscription } from 'rxjs';
-import { Project } from '../../Projects'
+import { Project } from '../Projects'
 
 @Component({
   selector: 'app-projects-items',

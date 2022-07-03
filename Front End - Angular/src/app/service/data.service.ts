@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -21,4 +27,9 @@ export class DataService {
     const url = `${this.apiUrl}/${data}/${item.id}`;
     return this.http.delete<any>(url);
   }
+
+  addItem(data: string, item: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl+"/"+data, item, httpOptions);
+  }
+
 }

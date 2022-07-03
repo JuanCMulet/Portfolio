@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }  from '@angular/forms';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -10,10 +12,14 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { EducationItemsComponent } from './components/education-items/education-items.component';
-import { ProjectsItemsComponent } from './components/projects-items/projects-items.component';
-import { ExperienceItemsComponent } from './components/experience-items/experience-items.component';
-import { SkillsItemsComponent } from './components/skills-items/skills-items.component';
+import { EducationItemsComponent } from './components/education/education-items/education-items.component';
+import { ProjectsItemsComponent } from './components/projects/projects-items/projects-items.component';
+import { ExperienceItemsComponent } from './components/experience/experience-items/experience-items.component';
+import { SkillsItemsComponent } from './components/skills/skills-items/skills-items.component';
+import { AddEducationComponent } from './components/education/add-education/add-education.component';
+import { AddExperienceComponent } from './components/experience/add-experience/add-experience.component';
+import { AddProjectComponent } from './components/projects/add-project/add-project.component';
+import { AddSkillComponent } from './components/skills/add-skill/add-skill.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +34,20 @@ import { SkillsItemsComponent } from './components/skills-items/skills-items.com
     EducationItemsComponent,
     ProjectsItemsComponent,
     ExperienceItemsComponent,
-    SkillsItemsComponent
+    SkillsItemsComponent,
+    AddEducationComponent,
+    AddExperienceComponent,
+    AddProjectComponent,
+    AddSkillComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule, 
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      animation: false
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

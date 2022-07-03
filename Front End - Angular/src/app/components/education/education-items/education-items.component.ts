@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LogService } from 'src/app/service/log.service';
-import { DataService } from'src/app/service/data.service';
 import { Subscription } from 'rxjs';
+import { Education } from '../Education';
 
 @Component({
   selector: 'app-education-items',
@@ -9,13 +9,14 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./education-items.component.css']
 })
 export class EducationItemsComponent implements OnInit {
-  education:any
-  loggedIn:boolean = false;
+  @Input() education:any;
+  @Input() loggedIn:boolean = false;
+  @Output() onDeleteEducation: EventEmitter<Education> = new EventEmitter();
+
   subscription?: Subscription;
 
   constructor(
-    private logService: LogService,
-    private db: DataService
+    private logService: LogService
   ) {
     this.subscription = this.logService.onToggle().subscribe(
       value => {
@@ -25,9 +26,10 @@ export class EducationItemsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.db.getData("education").subscribe(data => {
-      this.education = data
-    })
+  }
+
+  onDelete(education:Education) {
+    this.onDeleteEducation.emit(education);
   }
 
 }

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { LogService } from 'src/app/service/log.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Skill } from '../Skills'
 
 @Component({
   selector: 'app-skills-items',
@@ -8,20 +8,20 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./skills-items.component.css']
 })
 export class SkillsItemsComponent implements OnInit {
-  loggedIn:boolean = false;
+  @Input() skill:any;
+  @Input() loggedIn:boolean = false;
+  @Output() onDeleteSkill: EventEmitter<Skill> = new EventEmitter();
   subscription?: Subscription;
 
   constructor(
-    private logService: LogService
   ) {
-    this.subscription = this.logService.onToggle().subscribe(
-      value => {
-        this.loggedIn = value;
-      }
-    )
    }
 
   ngOnInit(): void {
+  }
+
+  onDelete(skill:Skill) {
+    this.onDeleteSkill.emit(skill);
   }
 
 }

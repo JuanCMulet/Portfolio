@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LogService } from 'src/app/service/log.service';
 import { DataService } from 'src/app/service/data.service';
 import { Subscription } from 'rxjs';
-import { Project } from "../../Projects"
+import { Project } from "./Projects"
 
 @Component({
   selector: 'app-projects',
