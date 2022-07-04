@@ -3,15 +3,24 @@
       <div class="d-flex flex-column">
         <div class="d-flex flex-row justify-content-between">
           <h5 class="card-title">Proyectos</h5>
-          <button *ngIf="loggedIn" class="btn btn-default"><i class="bi bi-plus-circle" style="font-size: 1.5rem; color:rgb(61, 204, 92)"></i></button>
+          <button *ngIf="loggedIn" (click)="toggleForm()" class="btn btn-default"><i class="bi bi-plus-circle" style="font-size: 1.5rem; color:rgb(61, 204, 92)"></i></button>
         </div>
         <br>
         <app-projects-items
         *ngFor="let project of projects"
         [project]="project"
+        [loggedIn]="loggedIn"
         (onDeleteProject)="deleteProject(project)"
         >
         </app-projects-items>
+
+        <div class="container">
+          <app-add-project 
+          *ngIf="showAddProj"
+          (onAddProject)="addProject($event)">
+          </app-add-project>
+        </div>
+
       </div>
     </div>
   </div>

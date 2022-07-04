@@ -1,6 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { LogService } from 'src/app/service/log.service';
-import { Subscription } from 'rxjs';
 import { Project } from '../Projects'
 
 @Component({
@@ -10,18 +8,11 @@ import { Project } from '../Projects'
 })
 export class ProjectsItemsComponent implements OnInit {
   @Input() project:any;
+  @Input() loggedIn:boolean = false;
   @Output() onDeleteProject: EventEmitter<Project> = new EventEmitter();
-  loggedIn:boolean = false;
-  subscription?: Subscription;
 
   constructor(
-    private logService: LogService,
   ) {
-    this.subscription = this.logService.onToggle().subscribe(
-      value => {
-        this.loggedIn = value;
-      }
-    )
    }
 
   ngOnInit(): void {

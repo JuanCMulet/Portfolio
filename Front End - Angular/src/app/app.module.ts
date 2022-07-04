@@ -46,7 +46,18 @@ import { AddSkillComponent } from './components/skills/add-skill/add-skill.compo
     FormsModule, 
     NgCircleProgressModule.forRoot({
       radius: 100,
-      animation: false
+      animation: false,
+      showUnits: false,
+      clockwise: false,
+      outerStrokeWidth: 10,
+      innerStrokeWidth: 0,
+      backgroundColor: '#e2ebf0',
+      backgroundOpacity: 0.5,
+      backgroundPadding: 0,
+      subtitleFontWeight: '400',
+      subtitleFontSize: '12',
+      subtitleColor: '#000000'
+
     })
   ],
   providers: [],

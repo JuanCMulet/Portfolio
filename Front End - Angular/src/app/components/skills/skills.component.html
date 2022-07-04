@@ -7,13 +7,15 @@
         </div>
         <br>
 
-        <app-skills-items
+        <div class="d-flex justify-content-start flex-wrap">
+          <app-skills-items
         *ngFor="let skill of skills"
         [skill]="skill"
         [loggedIn]="loggedIn"
         (onDeleteSkill)="deleteSkill(skill)"
         >
         </app-skills-items>
+        </div>
 
         <div class="container">
           <app-add-skill 

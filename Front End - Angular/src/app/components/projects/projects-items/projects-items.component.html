@@ -1,17 +1,11 @@
-<div >
+<div class="border-bottom border-success rounded">
     <div class="d-flex flex-row justify-content-between">
         <div class="row no-gutters">
-            <div class="col-auto">
-                <a>
-                    <img [src]="project.image" 
-                    class="img-fluid" 
-                    alt="">
-                </a>
-            </div>
             <div class="col">
                 <div class="card-block px-2">
                     <h4 class="card-title">{{project.name}}</h4>
                     <p class="card-text">{{project.desc}}</p>
+                    <a href={{project.url}}>Link al proyecto</a>
                 </div>
             </div>
         </div>

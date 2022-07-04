@@ -11,6 +11,7 @@ import { Project } from "./Projects"
 })
 export class ProjectsComponent implements OnInit {
   projects:Project[] = [];
+  showAddProj:boolean = false;
   loggedIn:boolean = false;
   subscription?: Subscription;
 
@@ -31,6 +32,10 @@ export class ProjectsComponent implements OnInit {
     })
   }
 
+  toggleForm() {
+    this.showAddProj = !this.showAddProj;
+  }
+
   deleteProject(project:Project) {
     this.db.deleteItem("projects", project).subscribe( 
       () => {
@@ -38,6 +43,15 @@ export class ProjectsComponent implements OnInit {
           return p.id !== project.id 
         })
       });
+  }
+
+  addProject(project:Project) {
+    this.db.addItem("projects", project).subscribe(
+      (project) => {
+        this.projects.push(project);
+      }
+    )
+    this.showAddProj = false;
   }
 
 }

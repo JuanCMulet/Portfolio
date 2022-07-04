@@ -1,1 +1,56 @@
-<p>add-project works!</p>
+<form
+  #it="ngForm"
+  class="d-flex flex-column align-items-center"
+  (ngSubmit)="onSubmit(it)"
+>
+
+  <fieldset>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Proyecto</label>
+      <input
+        required
+        class="form-control"
+        name="name"
+        type="text"
+        id="name"
+        ngModel
+        #name="ngModel"
+        placeholder="Nombre del Proyecto"
+      >
+    </div>
+
+    <div class="mb-3">
+      <label 
+        for="desc" 
+        class="form-label">Descripción</label>
+      <input
+        required
+        class="form-control"
+        name="desc"
+        type="text"
+        id="desc"
+        ngModel
+        #desc="ngModel"
+        placeholder="Breve descripción del proyecto"
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="start" class="form-label">Url</label>
+      <input
+        class="form-control"
+        name="url"
+        type="url"
+        id="url"
+        ngModel
+        #url="ngModel"
+        placeholder="Link al proyecto"
+      >
+    </div>
+
+
+  </fieldset>
+    <button type="submit" class="btn btn-success">Guardar</button> 
+
+</form>

@@ -1,6 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { LogService } from 'src/app/service/log.service';
-import { Subscription } from 'rxjs';
 import { Experience } from '../Experience'
 
 @Component({
@@ -12,16 +10,9 @@ export class ExperienceItemsComponent implements OnInit {
   @Input() experience:any;
   @Input() loggedIn:boolean = false;
   @Output() onDeleteExperience: EventEmitter<Experience> = new EventEmitter();
-  subscription?: Subscription;
 
   constructor(
-    private logService: LogService,
   ) {
-    /*this.subscription = this.logService.onToggle().subscribe(
-      value => {
-        this.loggedIn = value;
-      }
-    )*/
    }
 
   ngOnInit(): void {
