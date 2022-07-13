@@ -1,12 +1,32 @@
 <div class="card mat-card" id="first-card">
     <div id="profile-background">
-      <img [src]="personal.backImage" 
+      <img 
+          *ngIf="!loggedIn"
+          [src]="personal.backImage" 
            id="banner" 
            alt="banner image">
+      <button *ngIf="loggedIn"
+              (mouseover)="hoverBackground=true"
+              (mouseout)="hoverBackground=false"
+              class="banner-button hover-blur">
+              <figure>
+                <img 
+                    [src]="personal.backImage" 
+                    id="banner-edit"
+                    alt="banner image">
+              </figure>
+              <h2 *ngIf="hoverBackground"
+                  class="btn btn-dark">Change Background</h2>
+      </button>
     </div>
     <div class="card-body">
       <div class="row">
         <div class="col-3">
+          <div class="d-flex flex-row justify-content-end">
+            <button *ngIf="loggedIn" class="btn btn-default">
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+          </div>
           <img id="profile-image" [src]="personal.profileImage">
           <h5 class="card-title">{{personal.name}}</h5>
           <p>{{personal.position}}</p>

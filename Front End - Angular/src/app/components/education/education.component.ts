@@ -54,4 +54,8 @@ export class EducationComponent implements OnInit {
     this.showAddEduc = false;
   }
 
+  updateEducation(education:Education) {
+    this.db.updateItem("education", education).subscribe()
+  }
+
 }

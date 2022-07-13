@@ -54,4 +54,8 @@ export class ProjectsComponent implements OnInit {
     this.showAddProj = false;
   }
 
+  updateProject(project:Project) {
+    this.db.updateItem("projects", project).subscribe()
+  }
+
 }

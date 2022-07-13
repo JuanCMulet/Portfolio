@@ -17,6 +17,11 @@ export class AddProjectComponent implements OnInit {
 
   onSubmit(it:NgForm){
     if(it.valid){
+      if(it.value.url && !/^(https?):\/\//i.test(it.value.url)
+                      && 'http://'.indexOf(it.value.url) !== 0 
+                      && 'https://'.indexOf(it.value.url) !== 0 ) {
+                        it.value.url = 'http://' + it.value.url
+    }
       this.onAddProject.emit(it.value)
     }
   }

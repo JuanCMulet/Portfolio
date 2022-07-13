@@ -1,20 +1,55 @@
 <div class="border-bottom border-success rounded">
     <div class="d-flex flex-row justify-content-between">
         <div class="row no-gutters">
-            <div class="col">
+            <div *ngIf="!editProj||!loggedIn" class="col">
                 <div class="card-block px-2">
                     <h4 class="card-title">{{project.name}}</h4>
                     <p class="card-text">{{project.desc}}</p>
-                    <a href={{project.url}}>Link al proyecto</a>
+                    <a href={{project.url}} target="_blank">Link al proyecto</a>
                 </div>
             </div>
+            <form 
+                #it="ngForm"
+                *ngIf="editProj&&loggedIn" 
+                class="col d-flex justify-content-center pb-2"
+                (ngSubmit)="onSubmit(it)">
+                <fieldset>
+                    <div class="card-block px-2">
+                        <input
+                            class="form-control"
+                            name="name"
+                            type="text"
+                            id="name"
+                            ngModel={{project.name}}
+                            #name="ngModel"
+                        >
+                        <input
+                            class="form-control"
+                            name="desc"
+                            type="text"
+                            id="desc"
+                            ngModel={{project.desc}}
+                            #desc="ngModel"
+                        >
+                        <input
+                            class="form-control"
+                            name="url"
+                            type="url"
+                            id="url"
+                            ngModel="{{project.url}}"
+                            #url="ngModel"
+                        >
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
         </div>
         <div *ngIf="loggedIn">
-        <button class="btn btn-default">
+        <button (click)="toggleEdit()" class="btn btn-default">
             <i class="bi bi-pencil-fill"></i>
         </button>
-        <button class="btn btn-default">
-            <i (click)="onDelete(project)" class="bi bi-trash-fill"></i>
+        <button (click)="onDelete(project)" class="btn btn-default">
+            <i class="bi bi-trash-fill"></i>
         </button>
         </div>
     </div>

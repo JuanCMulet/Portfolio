@@ -13,6 +13,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
       "start": "2010",
       "end": "2015"
+    },
+    {
+      "name": "asdasdas",
+      "desc": "test",
+      "start": null,
+      "end": "2022",
+      "id": 2
     }
   ],
   "experience": [
@@ -22,32 +29,52 @@
       "start": 2022,
       "end": "",
       "id": 1
+    },
+    {
+      "name": "testasd",
+      "desc": "test2a",
+      "start": "2015",
+      "end": null,
+      "id": 2
+    },
+    {
+      "name": "asdasdasd",
+      "desc": "asdasdasd",
+      "start": 1980,
+      "end": 2001,
+      "id": 3
     }
   ],
   "skills": [
     {
       "name": "CSS",
-      "level": 50,
+      "level": "70",
       "id": 1
     },
     {
-      "name": "Typescript",
-      "level": 65,
+      "name": "Javascript",
+      "level": "80",
       "id": 2
     }
   ],
   "projects": [
     {
-      "name": "asdasd",
-      "desc": "asdasd",
-      "url": "www.google.com",
+      "name": "test1",
+      "desc": "asdasdasdasd",
+      "url": "http://test1",
       "id": 1
     },
     {
       "name": "asdasd",
       "desc": "asdasd",
-      "url": "www.facebook.com",
+      "url": "http://asdrew",
       "id": 2
+    },
+    {
+      "name": "asdasd",
+      "desc": "asdasdas",
+      "url": "http://google.com",
+      "id": 3
     }
   ]
 }

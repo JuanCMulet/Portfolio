@@ -32,4 +32,9 @@ export class DataService {
     return this.http.post<any>(this.apiUrl+"/"+data, item, httpOptions);
   }
 
+  updateItem(data: string, item: any): Observable<any> {
+    const url = `${this.apiUrl}/${data}/${item.id}`;
+    return this.http.put<any>(url, item, httpOptions);
+  }
+
 }

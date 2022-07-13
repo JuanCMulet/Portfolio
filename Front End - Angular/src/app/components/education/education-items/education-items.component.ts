@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { LogService } from 'src/app/service/log.service';
-import { Subscription } from 'rxjs';
+import { NgForm } from '@angular/forms';
 import { Education } from '../Education';
 
 @Component({
@@ -12,24 +11,29 @@ export class EducationItemsComponent implements OnInit {
   @Input() education:any;
   @Input() loggedIn:boolean = false;
   @Output() onDeleteEducation: EventEmitter<Education> = new EventEmitter();
+  @Output() onUpdateEducation: EventEmitter<Education> = new EventEmitter();
+  editEduc:boolean = false;
 
-  subscription?: Subscription;
-
-  constructor(
-    private logService: LogService
-  ) {
-    this.subscription = this.logService.onToggle().subscribe(
-      value => {
-        this.loggedIn = value;
-      }
-    )
-   }
+  constructor() {}
 
   ngOnInit(): void {
   }
 
   onDelete(education:Education) {
     this.onDeleteEducation.emit(education);
+  }
+
+  toggleEdit(): void {
+    this.editEduc = !this.editEduc;
+  }
+
+  onSubmit(it:NgForm){
+    if(it.valid){
+      it.value.id = this.education.id
+      this.education = it.value
+      this.onUpdateEducation.emit(it.value)
+      this.editEduc = false;
+    }
   }
 
 }

@@ -19,6 +19,7 @@ export class AboutComponent implements OnInit {
   };
   loggedIn:boolean = false;
   subscription?: Subscription;
+  hoverBackground=false;
 
   constructor(
     private logService: LogService,

@@ -47,11 +47,15 @@ export class ExperienceComponent implements OnInit {
 
   addExperience(experience:Experience) {
     this.db.addItem("experience", experience).subscribe(
-      (education) => {
-        this.experiences.push(education);
+      (experience) => {
+        this.experiences.push(experience);
       }
     )
     this.showAddExp = false;
+  }
+
+  updateExperience(experience:Experience) {
+    this.db.updateItem("experience", experience).subscribe()
   }
 
 }

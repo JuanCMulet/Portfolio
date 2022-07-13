@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { NgForm } from '@angular/forms';
 import { Skill } from '../Skills'
 
 @Component({
@@ -11,7 +11,8 @@ export class SkillsItemsComponent implements OnInit {
   @Input() skill:any;
   @Input() loggedIn:boolean = false;
   @Output() onDeleteSkill: EventEmitter<Skill> = new EventEmitter();
-  subscription?: Subscription;
+  @Output() onUpdateSkill: EventEmitter<Skill> = new EventEmitter();
+  editSkill:boolean = false;
 
   constructor(
   ) {
@@ -22,6 +23,19 @@ export class SkillsItemsComponent implements OnInit {
 
   onDelete(skill:Skill) {
     this.onDeleteSkill.emit(skill);
+  }
+
+  toggleEdit(): void {
+    this.editSkill = !this.editSkill;
+  }
+
+  onSubmit(it:NgForm){
+    if(it.valid){
+      it.value.id = this.skill.id
+      this.skill = it.value
+      this.onUpdateSkill.emit(it.value)
+      this.editSkill = false;
+    }
   }
 
 }

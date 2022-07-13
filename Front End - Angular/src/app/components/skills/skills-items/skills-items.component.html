@@ -1,13 +1,48 @@
-
 <div>
-  <circle-progress
+  <div>
+    <div *ngIf="loggedIn" class="d-flex flex-row justify-content-center">
+      <button (click)="toggleEdit()" class="btn btn-default">
+        <i class="bi bi-pencil-fill"></i>
+      </button>
+      <button class="btn btn-default">
+        <i (click)="onDelete(skill)" class="bi bi-trash-fill"></i>
+      </button>
+    </div>
+    <circle-progress
     [percent]="skill.level"
     [title]="skill.name"
     [subtitle]="skill.level+'%'"
     [outerStrokeColor]="'#96e6a1'"
   >
-  </circle-progress>
-  <button *ngIf="loggedIn" class="btn btn-default">
-    <i (click)="onDelete(skill)" class="bi bi-trash-fill"></i>
-  </button>
+    </circle-progress>
+    <form
+        #it="ngForm"
+        *ngIf="editSkill&&loggedIn" 
+        class="col d-flex justify-content-center pb-2"
+        (ngSubmit)="onSubmit(it)">
+        <fieldset>
+          <div class="card-block px-2">
+              <input
+                  class="form-control"
+                  name="name"
+                  type="text"
+                  id="name"
+                  ngModel={{skill.name}}
+                  #name="ngModel"
+              >
+              <input
+                  class="form-control"
+                  name="level"
+                  type="number"
+                  min="0"
+                  max="100"
+                  id="level"
+                  ngModel={{skill.level}}
+                  #level="ngModel"
+              >
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
+  </div>
 </div>

@@ -55,4 +55,8 @@ export class SkillsComponent implements OnInit {
     this.showAddSkill = false;
   }
 
+  updateSkill(skill:Skill) {
+    this.db.updateItem("skills", skill).subscribe()
+  }
+
 }

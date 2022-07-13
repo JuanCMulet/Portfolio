@@ -1,25 +1,67 @@
 <div>
     <div class="d-flex flex-row justify-content-between">
         <div class="row no-gutters">
-            <div class="col-auto">
-                <a>
-                    <img [src]="education.image" class="img-fluid" alt="">
-                </a>
-            </div>
-            <div class="col">
+            <div *ngIf="!editEduc||!loggedIn" class="col">
                 <div class="card-block px-2">
                     <h4 class="card-title">{{education.name}}</h4>
                     <p class="card-text">{{education.desc}}</p>
                     <footer class="blockquote-footer">{{education.start}} - {{education.end}}</footer>
                 </div>
             </div>
+            <form 
+                #it="ngForm"
+                *ngIf="editEduc&&loggedIn" 
+                class="col d-flex justify-content-center pb-2"
+                (ngSubmit)="onSubmit(it)">
+                <fieldset>
+                    <div class="card-block px-2">
+                        <input
+                            class="form-control"
+                            name="name"
+                            type="text"
+                            id="name"
+                            ngModel={{education.name}}
+                            #name="ngModel"
+                        >
+                        <input
+                            class="form-control"
+                            name="desc"
+                            type="text"
+                            id="desc"
+                            ngModel={{education.desc}}
+                            #desc="ngModel"
+                        >
+                        <input
+                            class="form-control"
+                            name="start"
+                            type="number"
+                            id="start"
+                            min="1900"
+                            max="2100"
+                            ngModel={{education.start}}
+                            #start="ngModel"
+                        >
+                        <input
+                            class="form-control"
+                            name="end"
+                            type="number"
+                            id="end"
+                            min="1900"
+                            max="2100"
+                            ngModel={{education.end}}
+                            #end="ngModel"
+                        >
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
         </div>
         <div *ngIf="loggedIn">
-        <button class="btn btn-default">
+        <button (click)="toggleEdit()" class="btn btn-default">
             <i class="bi bi-pencil-fill"></i>
         </button>
-        <button class="btn btn-default">
-            <i (click)="onDelete(education)" class="bi bi-trash-fill"></i>
+        <button (click)="onDelete(education)" class="btn btn-default">
+            <i class="bi bi-trash-fill"></i>
         </button>
         </div>
     </div>
