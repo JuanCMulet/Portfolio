@@ -17,7 +17,7 @@
 
         <div class="container">
           <app-add-experience 
-          *ngIf="showAddExp"
+          *ngIf="showAddExp&&loggedIn"
           (onAddExperience)="addExperience($event)">
           </app-add-experience>
         </div>

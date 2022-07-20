@@ -1,0 +1,29 @@
+<div class="col-9 d-flex flex-column">
+    <div class="d-flex flex-row justify-content-between">
+      <h5 class="card-title">Acerca de</h5>
+      <button *ngIf="loggedIn" class="btn btn-default">
+        <i (click)="toggleEdit()" class="bi bi-pencil-fill"></i>
+      </button>
+    </div>
+    <p *ngIf="!editDescription">{{description}}</p>
+    <form
+      #it="ngForm"
+      *ngIf="editDescription&&loggedIn"
+      class="col d-flex justify-content-center pb-2"
+      (ngSubmit)="onSubmit(it)">
+    <fieldset>
+      <div class="card-block px-2">
+        <input
+            class="form-control"
+            name="desc"
+            type="text"
+            id="desc"
+            ngModel
+            #desc="ngModel"
+            placeholder={{description}}
+        >
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
+</div>

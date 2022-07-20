@@ -1,0 +1,45 @@
+<div class="col-3">
+    <div class="d-flex flex-row justify-content-end">
+      <button *ngIf="loggedIn" class="btn btn-default">
+        <i (click)="toggleEdit()" class="bi bi-pencil-fill"></i>
+      </button>
+    </div>
+    <img id="profile-image" [src]="about.profileImage">
+    <h5 class="card-title">{{about.name}}</h5>
+    <p>{{about.position}}</p>
+    <form
+    #it="ngForm"
+    *ngIf="editProfile&&loggedIn"
+    class="col d-flex justify-content-center pb-2"
+    (ngSubmit)="onSubmit(it)">
+      <fieldset>
+        <div class="card-block px-2">
+          <input
+              class="form-control"
+              name="name"
+              type="text"
+              id="name"
+              ngModel={{about.name}}
+              #name="ngModel"
+          >
+          <input
+              class="form-control"
+              name="position"
+              type="text"
+              id="position"
+              ngModel={{about.position}}
+              #position="ngModel"
+          >
+          <input
+              class="form-control"
+              name="profileImage"
+              type="url"
+              id="profileImage"
+              ngModel={{about.profileImage}}
+              #profileImage="ngModel"
+          >
+          </div>
+      </fieldset>
+      <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
+</div>

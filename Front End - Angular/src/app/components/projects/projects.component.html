@@ -17,7 +17,7 @@
 
         <div class="container">
           <app-add-project 
-          *ngIf="showAddProj"
+          *ngIf="showAddProj&&loggedIn"
           (onAddProject)="addProject($event)">
           </app-add-project>
         </div>

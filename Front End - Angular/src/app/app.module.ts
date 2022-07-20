@@ -20,6 +20,9 @@ import { AddEducationComponent } from './components/education/add-education/add-
 import { AddExperienceComponent } from './components/experience/add-experience/add-experience.component';
 import { AddProjectComponent } from './components/projects/add-project/add-project.component';
 import { AddSkillComponent } from './components/skills/add-skill/add-skill.component';
+import { BackgroundComponent } from './components/about/background/background.component';
+import { DescriptionComponent } from './components/about/description/description.component';
+import { ProfileComponent } from './components/about/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { AddSkillComponent } from './components/skills/add-skill/add-skill.compo
     AddEducationComponent,
     AddExperienceComponent,
     AddProjectComponent,
-    AddSkillComponent
+    AddSkillComponent,
+    BackgroundComponent,
+    DescriptionComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

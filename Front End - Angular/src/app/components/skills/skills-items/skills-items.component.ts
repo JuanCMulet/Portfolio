@@ -22,6 +22,7 @@ export class SkillsItemsComponent implements OnInit {
   }
 
   onDelete(skill:Skill) {
+    console.log(this.skill)
     this.onDeleteSkill.emit(skill);
   }
 

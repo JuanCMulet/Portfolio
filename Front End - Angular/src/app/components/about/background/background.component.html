@@ -1,0 +1,35 @@
+<div (mouseenter)="hoverBackground=true" 
+         (mouseleave)="hoverBackground=false"
+         id="profile-background">
+      <img 
+          *ngIf="!loggedIn"
+          [src]="background" 
+           id="banner" 
+           alt="banner image">
+      <div *ngIf="loggedIn"
+            class="banner-button hover-blur d-flex flex-column">
+              <figure (click)="toggleEdit()">
+                <img 
+                    [src]="background" 
+                    id="banner-edit"
+                    alt="banner image">
+              </figure>
+              <div class="align-self-center">
+                <form #it="ngForm"
+                      *ngIf="editBackground&&loggedIn"
+                      class="btn btn-dark"
+                      (ngSubmit)="onSubmit(it)">
+                      <label for="background">Cambiar Imagen de Fondo</label>
+                      <input class="form-control mt-2"
+                             name="backImage"
+                             type="url"
+                             id="backImage"
+                             ngModel
+                             #backImage="ngModel"
+                             placeholder="https://i.pinimg.com/564x/fa/f1/f7/faf1f7f6e2e88bafc5b85fd3e9ecae76.jpg"
+                      >
+                      <button type="submit" class="btn btn-success mt-2">Guardar</button>
+                  </form>
+              </div>
+        </div>
+    </div>

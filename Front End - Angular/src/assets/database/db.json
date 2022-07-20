@@ -1,25 +1,21 @@
 {
-  "personalInfo": {
-    "name": "Juan Ignacio Coronel Mulet",
-    "backImage": "https://media.istockphoto.com/photos/tabletop-role-playing-flat-lay-background-with-colorful-rpg-dices-and-picture-id1178549496?k=20&m=1178549496&s=170667a&w=0&h=a3AnnLdKam0fqEa8MgRO868qaj-TL4MMoKe0tWwLDd4=",
-    "profileImage": "assets/profile-img.jpg",
-    "position": "Full Stack Developer Junior",
-    "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e"
-  },
-  "education": [
+  "about": [
     {
       "id": 1,
+      "name": "Juan Mulet",
+      "backImage": "http://media.istockphoto.com/photos/tabletop-role-playing-flat-lay-background-with-colorful-rpg-dices-and-picture-id1178549496?k=20&m=1178549496&s=170667a&w=0&h=a3AnnLdKam0fqEa8MgRO868qaj-TL4MMoKe0tWwLDd4=",
+      "profileImage": "https://scontent.fros8-1.fna.fbcdn.net/v/t1.6435-9/197911825_10216613313600047_728451942392040609_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=kbktf9d7-r4AX97Pucp&_nc_ht=scontent.fros8-1.fna&oh=00_AT_lnAw1vwT6SyJnxCqi5_SyL8dFydAGXEA5Oy5Hy_Rq1A&oe=62FD68C7",
+      "position": "Full Stack Developer Junior",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e"
+    }
+  ],
+  "education": [
+    {
       "name": "Superior de Comercio Libertador General San Martín",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e",
       "start": "2010",
-      "end": "2015"
-    },
-    {
-      "name": "asdasdas",
-      "desc": "test",
-      "start": null,
-      "end": "2022",
-      "id": 2
+      "end": 2015,
+      "id": 1
     }
   ],
   "experience": [
@@ -29,32 +25,23 @@
       "start": 2022,
       "end": "",
       "id": 1
-    },
-    {
-      "name": "testasd",
-      "desc": "test2a",
-      "start": "2015",
-      "end": null,
-      "id": 2
-    },
-    {
-      "name": "asdasdasd",
-      "desc": "asdasdasd",
-      "start": 1980,
-      "end": 2001,
-      "id": 3
     }
   ],
   "skills": [
     {
       "name": "CSS",
-      "level": "70",
+      "level": 70,
       "id": 1
     },
     {
       "name": "Javascript",
-      "level": "80",
+      "level": 80,
       "id": 2
+    },
+    {
+      "name": "asdasd",
+      "level": 50,
+      "id": 3
     }
   ],
   "projects": [
@@ -69,12 +56,6 @@
       "desc": "asdasd",
       "url": "http://asdrew",
       "id": 2
-    },
-    {
-      "name": "asdasd",
-      "desc": "asdasdas",
-      "url": "http://google.com",
-      "id": 3
     }
   ]
 }

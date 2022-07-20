@@ -1,7 +1,8 @@
-export interface Personal {
+export interface About {
+    id?: number
     name: string;
     backImage: string;
     profileImage: string;
     position: string;
-    about: string;
+    desc: string;
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LogService } from 'src/app/service/log.service';
 import { DataService } from 'src/app/service/data.service';
 import { Subscription } from 'rxjs';
-import { Personal } from './Personal'
+import { About } from './About'
 
 @Component({
   selector: 'app-about',
@@ -10,16 +10,9 @@ import { Personal } from './Personal'
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  personal:Personal = {
-    "name": '',
-    "backImage": '',
-    "profileImage": '',
-    "position": '',
-    "about": ''
-  };
+  about:any = {};
   loggedIn:boolean = false;
   subscription?: Subscription;
-  hoverBackground=false;
 
   constructor(
     private logService: LogService,
@@ -33,9 +26,28 @@ export class AboutComponent implements OnInit {
    }
    
   ngOnInit(): void {
-    this.db.getData("personalInfo").subscribe(data => {
-      this.personal = data
+    this.db.getData("about").subscribe(data => {
+      this.about = data[0]
     })
+  }
+
+  updateBackground(background:any) {
+    this.about.backImage = background.backImage;
+    this.db.updateItem("about", this.about).subscribe()
+  }
+
+  updateProfile(profile:any) {
+    this.about.name = profile.name;
+    this.about.profileImage = profile.profileImage;
+    this.about.position = profile.position;
+    this.db.updateItem("about", this.about).subscribe()
+  }
+
+  updateDescription(description:any) {
+    console.log(description, description.desc)
+    this.about.desc = description.desc;
+    console.log(this.about.desc)
+    this.db.updateItem("about", this.about).subscribe()
   }
 
 }

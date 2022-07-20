@@ -1,45 +1,25 @@
 <div class="card mat-card" id="first-card">
-    <div id="profile-background">
-      <img 
-          *ngIf="!loggedIn"
-          [src]="personal.backImage" 
-           id="banner" 
-           alt="banner image">
-      <button *ngIf="loggedIn"
-              (mouseover)="hoverBackground=true"
-              (mouseout)="hoverBackground=false"
-              class="banner-button hover-blur">
-              <figure>
-                <img 
-                    [src]="personal.backImage" 
-                    id="banner-edit"
-                    alt="banner image">
-              </figure>
-              <h2 *ngIf="hoverBackground"
-                  class="btn btn-dark">Change Background</h2>
-      </button>
-    </div>
+
+    <app-background
+      [background]="about.backImage"
+      [loggedIn]="loggedIn"
+      (onUpdateBackground)="updateBackground($event)"
+    ></app-background>
+
     <div class="card-body">
       <div class="row">
-        <div class="col-3">
-          <div class="d-flex flex-row justify-content-end">
-            <button *ngIf="loggedIn" class="btn btn-default">
-              <i class="bi bi-pencil-fill"></i>
-            </button>
-          </div>
-          <img id="profile-image" [src]="personal.profileImage">
-          <h5 class="card-title">{{personal.name}}</h5>
-          <p>{{personal.position}}</p>
-        </div>
-        <div class="col-9 d-flex flex-column">
-          <div class="d-flex flex-row justify-content-between">
-            <h5 class="card-title">Acerca de</h5>
-            <button *ngIf="loggedIn" class="btn btn-default">
-              <i class="bi bi-pencil-fill"></i>
-            </button>
-          </div>
-          <p>{{personal.about}}</p>
-        </div>
+        <app-profile
+        [about]="about"
+        [loggedIn]="loggedIn"
+        (onUpdateProfile)="updateProfile($event)"
+        ></app-profile>
+
+        <app-description
+        [description]="about.desc"
+        [loggedIn]="loggedIn"
+        (onUpdateDescription)="updateDescription($event)"
+        >
+        </app-description>
       </div>
     </div>
 </div>

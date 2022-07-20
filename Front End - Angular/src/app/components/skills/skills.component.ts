@@ -48,10 +48,11 @@ export class SkillsComponent implements OnInit {
 
   addSkill(skill:Skill) {
     this.db.addItem("skills", skill).subscribe(
-      (education) => {
+      (skill) => {
         this.skills.push(skill);
       }
     )
+    console.log(this.skills)
     this.showAddSkill = false;
   }
 

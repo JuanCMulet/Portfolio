@@ -17,7 +17,7 @@
 
         <div class="container">
           <app-add-education 
-          *ngIf="showAddEduc"
+          *ngIf="showAddEduc&&loggedIn"
           (onAddEducation)="addEducation($event)">
           </app-add-education>
         </div>

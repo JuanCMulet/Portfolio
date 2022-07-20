@@ -20,7 +20,7 @@
 
         <div class="container">
           <app-add-skill 
-          *ngIf="showAddSkill"
+          *ngIf="showAddSkill&&loggedIn"
           (onAddSkill)="addSkill($event)">
           </app-add-skill>
         </div>

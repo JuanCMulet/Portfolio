@@ -18,8 +18,6 @@ export class AddSkillComponent implements OnInit {
   onSubmit(it:NgForm){
     if(it.valid){
       this.onAddSkill.emit(it.value)
-      console.log(it.value)
-      console.log(it.valid)
     }
   }
 
