@@ -30,12 +30,12 @@ public class AccountController {
         return accountServ.verUser();
     }
     
-    @DeleteMapping ("/delete/{id}")
+    @DeleteMapping ("/delete/user/{id}")
     public void borrarUser(@PathVariable Long id) {
         accountServ.borrarUser(id);
     }
     
-    @PutMapping ("/cambiar/{id}")
+    @PutMapping ("/cambiar/user/{id}")
     public void cambiarUser(@RequestBody Account user, @PathVariable Long id) {
         accountServ.cambiarUser(user, id);
     }

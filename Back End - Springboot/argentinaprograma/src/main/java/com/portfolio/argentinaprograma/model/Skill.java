@@ -5,16 +5,16 @@ import lombok.Setter;
 
 
 @Getter @Setter
-public class Skills {
+public class Skill {
     
     private Long id;
     private String name;
     private int level;
     
-    public Skills() {
+    public Skill() {
     }
     
-    public Skills(Long id, String name, int level) {
+    public Skill(Long id, String name, int level) {
         this.id = id;
         this.name = name;
         this.level = level;

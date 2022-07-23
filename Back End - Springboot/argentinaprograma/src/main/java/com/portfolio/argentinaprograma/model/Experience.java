@@ -5,20 +5,22 @@ import lombok.Setter;
 
 
 @Getter @Setter
-public class Projects {
+public class Experience {
     
     private Long id;
     private String name;
     private String desc;
-    private String url;
+    private int start;
+    private int end;
     
-    public Projects() {
+     public Experience() {
     }
     
-    public Projects(Long id, String name, String desc, String url) {
+    public Experience(Long id, String name, String desc, int start, int end) {
         this.id = id;
         this.name = name;
         this.desc = desc;
-        this.url = url;
+        this.start = start;
+        this.end = end;
     }
 }
