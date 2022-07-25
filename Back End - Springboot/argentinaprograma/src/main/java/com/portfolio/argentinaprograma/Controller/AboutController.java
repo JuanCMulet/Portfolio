@@ -1,13 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.portfolio.argentinaprograma.Controller;
 
-/**
- *
- * @author Juan
- */
+import com.portfolio.argentinaprograma.model.About;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import com.portfolio.argentinaprograma.service.IAboutService;
+import org.springframework.web.bind.annotation.PutMapping;
+
+@RestController
 public class AboutController {
+    
+    @Autowired
+    private IAboutService aboutServ;
+    
+    @GetMapping ("/ver/about")
+    @ResponseBody
+    public List<About> verAbout() {
+        return aboutServ.verAbout();
+    }
+    
+    @PutMapping ("/cambiar/about/{id}")
+    public void cambiarUser(@RequestBody About about, @PathVariable Long id) {
+        aboutServ.cambiarAbout(about, id);
+    }
     
 }
