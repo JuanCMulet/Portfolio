@@ -1,25 +1,23 @@
 package com.portfolio.argentinaprograma.model;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.AllArgsConstructor;
+import javax.persistence.Table;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
+@Entity
 @Getter 
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-public class Account {
+@Table(name = "Account")
+public class Account implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column(name = "username")
@@ -27,15 +25,5 @@ public class Account {
  
     @Column(name = "password")
     private String password;
-    
-    public Account() {
-        
-    }
-    
-    public Account(Long id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
-    
+
 }
