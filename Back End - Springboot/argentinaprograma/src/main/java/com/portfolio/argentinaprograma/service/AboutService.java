@@ -17,11 +17,16 @@ public class AboutService implements IAboutService {
     public List<About> verAbout() {
         return aboutRepo.findAll();
     }
+    
+    @Override
+    public void crearAbout(About about) {
+        aboutRepo.save(about);
+    }
 
     @Override
     public About cambiarAbout(About about, Long id) {
         About chgAbout = aboutRepo.findById(id)
-                .orElseThrow( () -> new ResourceNotFoundException("Account not found with id: " + id) );
+                .orElseThrow( () -> new ResourceNotFoundException("About not found with id: " + id) );
         
         chgAbout.setName(about.getName());
         chgAbout.setBackImage(about.getBackImage());

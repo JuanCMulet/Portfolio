@@ -6,6 +6,8 @@ import java.util.List;
 public interface IAboutService {
     
     public List<About> verAbout();
+    
+    public void crearAbout(About about);
 
     public About cambiarAbout(About user, Long id);
     

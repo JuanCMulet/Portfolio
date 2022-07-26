@@ -1,32 +1,30 @@
 package com.portfolio.argentinaprograma.model;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.AllArgsConstructor;
+import javax.persistence.Table;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
+@Entity
 @Getter 
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-public class Experience {
+@Table(name = "Experience")
+public class Experience implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column(name = "name")
     private String name;
     
-    @Column(name = "desc")
-    private String desc;
+    @Column(name = "description")
+    private String description;
     
     @Column(name = "start")
     private int start;
@@ -34,14 +32,4 @@ public class Experience {
     @Column(name = "end")
     private int end;
     
-     public Experience() {
-    }
-    
-    public Experience(Long id, String name, String desc, int start, int end) {
-        this.id = id;
-        this.name = name;
-        this.desc = desc;
-        this.start = start;
-        this.end = end;
-    }
 }
